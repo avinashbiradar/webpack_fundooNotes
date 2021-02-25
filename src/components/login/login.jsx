@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { withStyles,makeStyles } from '@material-ui/core/styles';
 import { login } from "../../services/userservice"
-import "./login";
+import "./login.scss";
 const useStyles = theme => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -39,13 +39,13 @@ class Login extends Component {
     }
   }
 
-    change (e) {
+    change=(e)=> {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
-  onSubmit (event)  {
+  onSubmit =(event) => {
     event.preventDefault();
     let loginData = {
         

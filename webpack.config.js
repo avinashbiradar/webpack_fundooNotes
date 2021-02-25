@@ -23,11 +23,21 @@ module.exports = {
             },
             {
                 test: /\.scss$/, //addthislineinwebpack.config.js
+                exclude: /node_modules/,
                 use: [
                       
                         "style-loader",
                         "css-loader",
-                        "sass-loader"
+                        "sass-loader",
+                        { 
+                        loader: "sass-loader|css-loader|style-loader",
+                        options: {
+                          implementation: require("sass"),
+                          sassOptions: {
+                            fiber: require("fibers"),
+                          },
+                        },
+                    }
                 ]
             },
         ]
@@ -42,6 +52,7 @@ module.exports = {
     },
     devServer: {
         contentBase: './dist',
-        historyApiFallback: true
+        historyApiFallback: true,
+        port: 4200
     }
 };
