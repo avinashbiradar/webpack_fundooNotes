@@ -40,3 +40,27 @@ export function getNotes() {
     return data4;
 };
 
+export function  deleteNotes(formData){
+        return axios.post(`${Url}/notes/trashNotes`,formData,{headers:{'Authorization':localStorage.getItem('token')}})
+}
+
+export function getTrashNotes(){
+    let data5= axios.get(`${Url}/notes/getTrashNotesList`,{headers:{'Authorization':localStorage.getItem('token')}})
+   return data5; 
+};
+
+export function ArchiveNotes(data){
+    return axios.post(`${Url}/notes/archiveNotes`,data,{headers:{'Authorization':localStorage.getItem('token')}})
+  };
+
+  export function getArchiveNotes(){
+   let data6 =axios.get(`${Url}/notes/getArchiveNotesList`,{headers:{'Authorization':localStorage.getItem('token')}})
+ return data6;  
+};
+
+// export function  changeColor(data){
+//     return axios.post(`${Url}/notes/changesColorNotes`,data,{headers:{'Authorization':localStorage.getItem('token')}})
+//   };
+export function  changeColor(data){
+    return axios.post(`http://fundoonotes.incubation.bridgelabz.com/api/notes/changesColorNotes`,data,{headers:{'Authorization':localStorage.getItem('token')}})
+  };

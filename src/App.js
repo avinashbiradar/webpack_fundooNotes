@@ -10,6 +10,8 @@ import Notes from "./components/notes/notes"
 import AddNote from "./components/addNote/addnote";
 import DisplayIcons from "./components/displayicons/displayicons";
 import DisplayNote from "./components/displaynotes./displaynotes";
+import TrashNote from "./components/trashnotes/trashnote"
+import Archive from "./components/archivenotes/archive"
 function App() {
   return (
     <div className="App">
@@ -26,6 +28,8 @@ function App() {
             <Route path="/takenote" component={AddNote}/>
             <Route path="/icons" component={DisplayIcons}/>
             <Route path="/displaynotes" component={DisplayNote}/>
+            <Route path="/trash" component={TrashNote}/>
+            <Route path="/archive" component={Archive} />
             </Switch>
     
      </Router>

@@ -3,19 +3,19 @@ import AddNote from "../addNote/addnote";
 import DisplayNote from "../displaynotes./displaynotes";
 import Typography from "@material-ui/core/Typography";
 import DisplayIcons from "../displayicons/displayicons";
-import { getTrashNotes } from "../../services/userservice";
+import { getArchiveNotes } from "../../services/userservice";
 import "../trashnotes/trashnote.scss";
 export default function Notes(props) {
-    const [trash, setTrash] = React.useState([]);
+    const [archive, setArchive] = React.useState([]);
   React.useEffect(() => {
     displaynotes();
   }, []);
 
   const displaynotes = () => {
-    getTrashNotes()
+    getArchiveNotes()
       .then((data) => {
-        setTrash(data.data.data.data);
-        console.log(trash);
+        setArchive(data.data.data.data);
+        console.log(archive);
       })
       .catch((err) => {
         console.log(err);
@@ -23,7 +23,7 @@ export default function Notes(props) {
   };
   return (
     <div className="mainContent">
-    {trash.map((data) => (
+    {archive.map((data) => (
         <div className="notes"  >
         <div>
           <Typography className="title">{data.title}</Typography>
@@ -31,7 +31,6 @@ export default function Notes(props) {
         </div>
         <div className="display">
             <DisplayIcons
-            // setDelete={setDelete}
              noteobject={data}
             />
           </div>

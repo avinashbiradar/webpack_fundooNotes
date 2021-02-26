@@ -106,8 +106,6 @@ return(
          <div className="toolbar1">
          <DisplayIcons 
          trash={trash}
-         setColor={clr}
-         setClr={setClr}
          />
 
          </div>

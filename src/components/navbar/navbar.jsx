@@ -9,7 +9,7 @@ import ReplayOutlinedIcon from "@material-ui/icons/ReplayOutlined";
 import DnsRoundedIcon from "@material-ui/icons/DnsRounded";
 import SettingsSharpIcon from "@material-ui/icons/SettingsOutlined";
 import AppsRoundedIcon from "@material-ui/icons/AppsRounded";
-import icon from "../assests/keep.icon.png";
+import icon from "../assests/keep.svg";
 import "../navbar/navbar.scss";
 import Sidebar from "../SideBar/sidebar";
 import Notes from "../notes/notes"
