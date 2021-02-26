@@ -55,8 +55,10 @@ class Login extends Component {
     };
 
     console.log(loginData)
+
     login (loginData).then((data)=>{
       console.log(data);
+      localStorage.setItem('token',data.data.id);
     })
     .catch ((error)=>{
       console.log(error)

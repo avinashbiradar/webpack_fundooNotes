@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { withStyles,makeStyles } from '@material-ui/core/styles';
 import { forgotPass } from "../../services/userservice"
-// import "./forgot.scss";
+import "./forgot.scss";
 
 
 

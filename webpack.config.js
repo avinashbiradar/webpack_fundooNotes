@@ -10,7 +10,7 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/, //addthislineinwebpack.config.js
                 loader: 'svg-url-loader',
-                // use: ['file-loader']
+              
             },
             {
                 test: /\.html$/, //addthislineinwebpack.config.js
@@ -22,24 +22,18 @@ module.exports = {
                 ]
             },
             {
-                test: /\.scss$/, //addthislineinwebpack.config.js
-                exclude: /node_modules/,
-                use: [
-                      
-                        "style-loader",
-                        "css-loader",
-                        "sass-loader",
-                        { 
-                        loader: "sass-loader|css-loader|style-loader",
-                        options: {
-                          implementation: require("sass"),
-                          sassOptions: {
-                            fiber: require("fibers"),
-                          },
-                        },
-                    }
-                ]
+                test: /.scss$/, //addthislineinwebpack.config.js
+                use: ['style-loader','css-loader','sass-loader'],
             },
+            {
+                test: /\.css$/i,
+                  use: [
+                    'style-loader',
+                    'css-loader'
+                    
+                  ]
+              },
+              
         ]
     },
     resolve: {
