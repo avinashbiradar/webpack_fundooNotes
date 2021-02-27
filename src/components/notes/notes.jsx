@@ -20,7 +20,8 @@ export default function Notes(props) {
   };
   return (
     <div className="mainContent">
-      <AddNote />
+      <AddNote getNoteUpdate={displaynotes}/>
+
       <DisplayNote notes={note} />
     </div>
   );

@@ -11,7 +11,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 import "../displayicons/displayicons.scss";
-// import { deleteNotes ,ArchiveNotes,changeColor } from "../../services/userservice";
+ import { deleteNotes ,ArchiveNotes,changeColor } from "../../services/userservice";
 const useStyles = makeStyles((theme) => ({
   colorMenu: {
     width: "130px",
@@ -53,6 +53,7 @@ const DisplayIcons = (props) => {
       };
     changeColor(data)
         .then((data) => {
+            props.displayicons;
           console.log("Update Color: " + data);
           console.log(colr);
           props.getall();
