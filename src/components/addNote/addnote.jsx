@@ -42,7 +42,6 @@ export default function AddNote(props) {
 
       updateNotes(formData)
         .then((data) => {
-            props.getNoteUpdate();
           console.log("Update Data: " + data);
         })
         .catch((err) => {
@@ -58,7 +57,6 @@ export default function AddNote(props) {
       console.log(data);
       addNote(data)
         .then((data) => {
-          props.getNoteUpdate();
           console.log(data);
         })
         .catch((error) => {
@@ -117,7 +115,7 @@ export default function AddNote(props) {
 
           <div className="toolbar">
             <div className="toolbar1">
-              <DisplayIcons trash={trash} displayicons={props.getNoteUpdate()} />
+              <DisplayIcons trash={trash} />
             </div>
             <div className="close-button">
               <Button size="small" onClick={handleNote}>
