@@ -58,9 +58,14 @@ export function ArchiveNotes(data){
  return data6;  
 };
 
-// export function  changeColor(data){
-//     return axios.post(`${Url}/notes/changesColorNotes`,data,{headers:{'Authorization':localStorage.getItem('token')}})
-//   };
 export function  changeColor(data){
-    return axios.post(`http://fundoonotes.incubation.bridgelabz.com/api/notes/changesColorNotes`,data,{headers:{'Authorization':localStorage.getItem('token')}})
+    return axios.post(`${Url}/notes/changesColorNotes`,data,{headers:{'Authorization':localStorage.getItem('token')}})
   };
+// export function  changeColor(data){
+//     return axios.post(`http://fundoonotes.incubation.bridgelabz.com/api/notes/changesColorNotes`,data,{headers:{'Authorization':localStorage.getItem('token')}})
+//   };
+
+export function deleteForever(data){
+    console.log(data);
+    return axios.post(`${Url}/notes/deleteForeverNotes`, data,{headers:{'Authorization':localStorage.getItem('token')}})
+}

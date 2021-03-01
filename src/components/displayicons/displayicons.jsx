@@ -121,6 +121,8 @@ const DisplayIcons = (props) => {
       });
    };
 
+
+      
    const ColorBlock = () => {
     return (
       <div className={classes.colorMenu} onMouseLeave={colorsHandleClose}>

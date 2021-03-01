@@ -7,9 +7,15 @@ import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneO
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
-
+ import archiveNotes from '../archivenotes/archive'
   export default class Sidebar extends React.Component {
-      render(){
+      constructor(props){
+          super(props);
+      }
+    nextPath = () => {
+         this.props.history.push('../archive');
+      };
+    render(){
         
     return (
      <div>
@@ -45,7 +51,7 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
                <ListItemText primary='Edit labels' />
            </ListItem>
     </div>
-    <div className="archive" onClick={this.archive}>
+    <div className="archive" onClick={this.nextPath}>
            <ListItem >
                <ListItemIcon>
                    <ArchiveOutlinedIcon className="Archive">
