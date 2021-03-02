@@ -13,6 +13,7 @@ import icon from "../assests/keep.svg";
 import "../navbar/navbar.scss";
 import Sidebar from "../SideBar/sidebar";
 import Notes from "../notes/notes"
+import { BrowserRouter as Router,Route,Switch,Link} from 'react-router-dom';
 export default class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -114,3 +115,7 @@ export default class Navbar extends React.Component {
 // <Sidebar appBarProps={open} />
 //<DisplayNote />  
 // <AddNote />
+//<Notes/>
+// // <Route path='/home ' component={Navbar}>
+// <Route path='/home/notes' component={Notes} />
+// </Route>

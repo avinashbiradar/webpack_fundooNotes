@@ -8,13 +8,14 @@ import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
  import archiveNotes from '../archivenotes/archive'
+import { Link } from "react-router-dom";
   export default class Sidebar extends React.Component {
       constructor(props){
           super(props);
       }
-    nextPath = () => {
-         this.props.history.push('../archive');
-      };
+    // nextPath = () => {
+    //      this.props.history.push('../archive');
+    //   };
     render(){
         
     return (
@@ -51,6 +52,7 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
                <ListItemText primary='Edit labels' />
            </ListItem>
     </div>
+   
     <div className="archive" onClick={this.nextPath}>
            <ListItem >
                <ListItemIcon>
@@ -60,7 +62,8 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
                <ListItemText primary='Archive' />
            </ListItem>
     </div>
-    <div className="bin" onClick={this.trash}>
+   
+    <div className="bin">
            <ListItem  >
                <ListItemIcon>
                    <DeleteOutlinedIcon  className="Trash">
@@ -75,3 +78,6 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
     );
    }
  }
+
+  // <Link to={`${this.props.match.path}/archive`}>
+  //</Link>

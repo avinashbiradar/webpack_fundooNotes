@@ -1,6 +1,6 @@
 import React from "react";
 import AddNote from "../addNote/addnote";
-import DisplayNote from "../displaynotes./displaynotes";
+import DisplayNote from "../displaynotes/displaynotes";
 import { getNotes } from "../../services/userservice";
 export default function Notes(props) {
   var [note, setNote] = React.useState([]);
@@ -21,7 +21,6 @@ export default function Notes(props) {
   return (
     <div className="mainContent">
       <AddNote getNoteUpdate={displaynotes}/>
-
       <DisplayNote notes={note} />
     </div>
   );

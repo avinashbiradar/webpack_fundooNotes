@@ -20,6 +20,8 @@ export default function AddNote(props) {
   const [description, setdescription] = React.useState(props.editDisc);
   const [trash, setTrash] = React.useState(props.trash);
   const [clr, setClr] = React.useState("#fafafa");
+
+  
   const handletitle = (Event) => {
     settitle(Event.target.value);
   };
@@ -30,18 +32,24 @@ export default function AddNote(props) {
 
   const handleNote = () => {
     if (props.setEdited) {
-      let formData = new FormData();
+      // let formData = new FormData();
       if (title == undefined && description == undefined) {
         console.log("Please Enter Data");
         titleDisplay(false);
         return null;
       }
-      formData.append("title", title);
-      formData.append("description", description);
-      formData.append("noteId", noteId);
+      // formData.append("title", title);
+      // formData.append("description", description);
+      // formData.append("noteId", noteId);
+      let data = {
+        title: title, 
+        description: description,
+        noteId:noteId,
 
-      updateNotes(formData)
+      };
+      updateNotes(data)
         .then((data) => {
+          props.getNoteUpdate();
           console.log("Update Data: " + data);
         })
         .catch((err) => {
@@ -57,6 +65,7 @@ export default function AddNote(props) {
       console.log(data);
       addNote(data)
         .then((data) => {
+          props.getNoteUpdate();
           console.log(data);
         })
         .catch((error) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import AddNote from "../addNote/addnote";
-import DisplayNote from "../displaynotes./displaynotes";
+import DisplayNote from "../displaynotes/displaynotes";
 import Typography from "@material-ui/core/Typography";
 import DisplayIcons from "../displayicons/displayicons";
 import { deleteForever, getTrashNotes , deleteNotes } from "../../services/userservice";
